@@ -73,6 +73,18 @@ class MyMap{
         return false;
     }
 
+    removeObject(key,object){
+        const index = this.key.indexOf(key);
+        this.removeFromArray(this.object[index],this.object[index].indexOf(object))
+    }
+    
+    removeFromArray(array,index) {
+        if (index > -1) {
+          array.splice(index, 1);
+        }
+      
+    }
+
 }
 
 /*
