@@ -31,7 +31,6 @@ class MyMap{
         this.key = new Array();
         this.object = new Array();
 
-      
     }
 
     getKey() {
@@ -58,10 +57,8 @@ class MyMap{
         if (this.key.indexOf(key)) {
             this.key.push(key);
             this.object.push(object);   
-            //console.log("Created !");
             return 1;   
         }
-        //console.log("Not created :(");
         return -1        
         
     }
@@ -87,23 +84,3 @@ class MyMap{
 
 }
 
-/*
-let array = [5,6,9];
-let array2 = [2,7,0];
-let arrayMap = new MyMap();
-
-console.log(array);
-
-arrayMap.addNewKey("1",array)
-arrayMap.addNewKey("1",array)
-arrayMap.addNewKey("2",array2)
-
-console.log(arrayMap.getKey());
-console.log(arrayMap.getObject());
-console.log(arrayMap.getObjectWithKey("1"));
-arrayMap.pushToCurrentKey("1",667);
-
-arrayMap.isKeyExist("1");
-arrayMap.isKeyExist("546");
-arrayMap.isKeyExist("2");
-*/
