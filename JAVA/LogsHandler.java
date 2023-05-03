@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.FileWriter;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /***
@@ -21,8 +23,12 @@ public class LogsHandler {
     private File        file;
     private FileWriter  fileWriter;
 
-    private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
+    /**
+     * En créant un objet static cela permet de n'instantier qu'une seule fois l'objet DateFormat.
+     * L'ancienne version de la classe LogsHandler initialisait à chaque fois un nouvel objet DateFormat ce qui generait une erreur (heap space error).
+     * La solution est de créer un objet static qui sera partagé par toutes les instances de la classe LogsHandler.
+     */
+    private static final DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); // Exemple : 2020-12-01 12:00:00
 
 
 
@@ -68,8 +74,6 @@ public class LogsHandler {
 
 
 
-
-
     // Ecrire dans un fichier de logs
     public void write(String message)
     {
@@ -81,7 +85,6 @@ public class LogsHandler {
             System.out.println("Exception : " + e.getMessage());
         }
     }
-
 
 
 }
